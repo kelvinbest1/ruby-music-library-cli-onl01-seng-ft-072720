@@ -1,4 +1,4 @@
-require "pry"
+
 class MusicLibraryController
   attr_accessor :path
 
@@ -41,7 +41,6 @@ class MusicLibraryController
 
 
     def list_songs
-      #binding.pry
        Song.all.sort {|a,b| a.name <=> b.name}.uniq.each.with_index(1) do |song, i|
         puts "#{i}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
     end
@@ -104,7 +103,6 @@ class MusicLibraryController
         #   #    song = list_of_songs[input+2]
         #   #    puts "Playing #{song.name} by #{song.artist.name}"
         #   #  else
-        #   #    #binding.pry
         #   #  end
         # end
         #
